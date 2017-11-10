@@ -42,7 +42,7 @@ class ProxyListingAPI(WebAPI):
         return alias_list
 
     @resource_route("/x-ipstudio/")
-    def x_nmos_private(self):
+    def x_ipstudio(self):
         return self.get_apis("x-ipstudio")
 
     @resource_route("/x-nmos/")
