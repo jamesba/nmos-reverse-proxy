@@ -27,7 +27,7 @@ class ProxyListingAPI(WebAPI):
 
     @resource_route("/")
     def base(self):
-        alias_list = ["x-nmos-opensourceprivatenamespace/", "x-nmos/"]
+        alias_list = ["x-ipstudio/", "x-nmos/"]
         for conffile in listdir(ALIAS_SITES):
             if isfile(join(ALIAS_SITES, conffile)) and conffile.endswith(".conf"):
                 with open(join(ALIAS_SITES, conffile)) as aliasfile:
@@ -41,9 +41,9 @@ class ProxyListingAPI(WebAPI):
         alias_list.sort()
         return alias_list
 
-    @resource_route("/x-nmos-opensourceprivatenamespace/")
+    @resource_route("/x-ipstudio/")
     def x_nmos_private(self):
-        return self.get_apis("x-nmos-opensourceprivatenamespace")
+        return self.get_apis("x-ipstudio")
 
     @resource_route("/x-nmos/")
     def x_nmos(self):
