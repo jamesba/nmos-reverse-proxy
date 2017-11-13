@@ -60,7 +60,7 @@ rm -rf %{buildroot}
 %{_bindir}/nmos-proxylisting
 
 %{python2_sitelib}/nmosreverseproxy
-%{python2_sitelib}/nmos_reverseproxy_common-%{version}*.egg-info
+%{python2_sitelib}/nmos_reverseproxy-%{version}*.egg-info
 
 %config %{_sysconfdir}/httpd/conf.d/nmos-reverseproxy-common.conf
 %config %{_sysconfdir}/httpd/conf.d/nmos-apis
