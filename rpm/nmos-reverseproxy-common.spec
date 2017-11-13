@@ -57,7 +57,7 @@ systemctl stop nmos-proxylisting || true
 rm -rf %{buildroot}
 
 %files
-%{_bindir}/nmos-proxylisting
+%{_bindir}/proxylisting
 
 %{python2_sitelib}/nmosreverseproxy
 %{python2_sitelib}/nmos_reverseproxy-%{version}*.egg-info
