@@ -15,7 +15,7 @@
 # limitations under the License.
 
 from nmoscommon.webapi import *
-from os import listdir
+from os import listdir, getenv
 from os.path import isfile, join
 
 ALIAS_SITES=getenv("PROXYLISTING_ALIAS_SITES", "/etc/apache2/sites-enabled/")

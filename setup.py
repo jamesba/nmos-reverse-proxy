@@ -88,7 +88,7 @@ if sys.argv[1] != "sdist" and sys.argv[1] != "clean":
         print "The dependencies must be installed in that order"
         sys.exit(1)
 
-setup(name = "reverseproxy",
+setup(name = "nmosreverseproxy",
       version = "0.1.0",
       description = "Reverse Proxy Directory listing service and Apache 2 configuration for NMOS services",
      url='www.nmos.tv',
@@ -103,9 +103,7 @@ setup(name = "reverseproxy",
                   'bin/proxylisting'
                 ],
       data_files=[
-                   ('/etc/init',        ['etc/init/proxylisting.conf']),
-                   ('/lib/systemd/system', ['lib/systemd/system/proxylisting.service'])
-                 ],
+      ],
       long_description = """
 Directory listing for the root of a reverse proxied Node
 """

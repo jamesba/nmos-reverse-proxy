@@ -1,8 +1,12 @@
 [Unit]
-Description=proxylisting
+Description=nmos-reverse-proxy
 Wants=network-online.target apache2.service apache2.service
 After=network.target network-online.target apache2.service
 
 [Service]
+Type=notify
 ExecStart=/usr/bin/proxylisting
 User=ipstudio
+
+[Install]
+WantedBy=multi-user.target
