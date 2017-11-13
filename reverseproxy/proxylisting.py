@@ -18,8 +18,8 @@ from nmoscommon.webapi import *
 from os import listdir
 from os.path import isfile, join
 
-ALIAS_SITES="/etc/apache2/sites-enabled/"
-PROXY_SITES="/etc/apache2/sites-available/"
+ALIAS_SITES=getenv("PROXYLISTING_ALIAS_SITES", "/etc/apache2/sites-enabled/")
+PROXY_SITES=getenv("PROXYLISTING_PROXY_SITES", "/etc/apache2/sites-available/")
 
 class ProxyListingAPI(WebAPI):
     def __init__(self):
