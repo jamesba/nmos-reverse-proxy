@@ -1,0 +1,14 @@
+[Unit]
+Description=nmos-proxylisting
+After=network.target
+
+[Service]
+User=ipstudio
+
+Environment=PROXYLISTING_ALIAS_SITES=/etc/httpd/conf.d/nmos-apis/
+Environment=PROXYLISTING_PROXY_SITES=/etc/httpd/conf.d/nmos-apis/
+
+ExecStart=/usr/bin/proxylisting
+
+[Install]
+WantedBy=network.target
