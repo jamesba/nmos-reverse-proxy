@@ -64,7 +64,7 @@ rm -rf %{buildroot}
 
 %config %{_sysconfdir}/httpd/conf.d/nmos-reverseproxy-common.conf
 %config %{_sysconfdir}/httpd/conf.d/nmos-apis
-%config %{_sysconfdir}/init/nmos-proxylisting.conf
+%config %{_sysconfdir}/init/proxylisting.conf
 
 %{_unitdir}/nmos-proxylisting.service
 
