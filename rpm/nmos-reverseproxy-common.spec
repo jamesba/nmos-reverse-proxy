@@ -4,7 +4,7 @@ Release: 2%{?dist}
 License: Apache 2
 Summary: Common reverse proxy config for IP Studio web services
 
-Source0: nmos-reverseproxy-common-%{version}.tar.gz
+Source0: reverseproxy-%{version}.tar.gz
 Source1: nmos-reverseproxy-common.conf
 Source2: nmos-proxylisting.service
 
