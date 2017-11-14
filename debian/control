@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 9), python-all (>= 2.6.6-3), dh-python, dh-systemd 
 
 Package: nmos-reverse-proxy
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, apache2, apache2-bin (>=2.4.18) | libapache2-mod-proxy-html, sl-cert, libxml2-dev
+Depends: ${misc:Depends}, ${python:Depends}, apache2, apache2-bin (>=2.4.18) | libapache2-mod-proxy-html, ssl-cert, libxml2-dev
 Recommends: python-nmoscommon
 Description: common reverse proxy config for NMOS web services
  Used to present a variety of microservices on a common port.
