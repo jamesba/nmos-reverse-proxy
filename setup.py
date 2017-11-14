@@ -88,7 +88,7 @@ if sys.argv[1] != "sdist" and sys.argv[1] != "clean":
         print "The dependencies must be installed in that order"
         sys.exit(1)
 
-setup(name = "nmos-reverseproxy",
+setup(name = "nmosreverseproxy",
       version = "0.1.0",
       description = "Reverse Proxy Directory listing service and Apache 2 configuration for NMOS services",
      url='www.nmos.tv',

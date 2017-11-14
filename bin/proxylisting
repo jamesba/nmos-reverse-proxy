@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from reverseproxy.proxylistingservice import ProxyListingService
+from nmosreverseproxy.proxylistingservice import ProxyListingService
 
 if __name__ == "__main__":
     service = ProxyListingService()
