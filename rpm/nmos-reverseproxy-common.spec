@@ -47,7 +47,7 @@ mkdir -p %{buildroot}/%{_unitdir}
 cp %{SOURCE2} %{buildroot}/%{_unitdir}/nmos-reverse-proxy.service
 
 mkdir -p %{buildroot}/%{_sysconfdir}/init
-cp %{SOURCE3} %{buildroot}/%{_sysconfdir}/nmos-reverse-proxy.conf
+cp %{SOURCE3} %{buildroot}/%{_sysconfdir}/init/nmos-reverse-proxy.conf
 
 %post
 systemctl daemon-reload
