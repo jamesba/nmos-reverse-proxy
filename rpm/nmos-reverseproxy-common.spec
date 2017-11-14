@@ -7,6 +7,7 @@ Summary: Common reverse proxy config for IP Studio web services
 Source0: nmosreverseproxy-%{version}.tar.gz
 Source1: nmos-reverseproxy-common.conf
 Source2: nmos-reverse-proxy.service
+Source3: nmos-reverse-proxy.conf
 
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:      noarch
@@ -45,6 +46,9 @@ cp %{SOURCE1} %{buildroot}/%{_sysconfdir}/httpd/conf.d/nmos-reverseproxy-common.
 mkdir -p %{buildroot}/%{_unitdir}
 cp %{SOURCE2} %{buildroot}/%{_unitdir}/nmos-reverse-proxy.service
 
+mkdir -p %{buildroot}/%{_sysconfdir}/init
+cp %{SOURCE3} %{buildroot}/%{_sysconfdir}/nmos-reverse-proxy.conf
+
 %post
 systemctl daemon-reload
 systemctl restart nmos-reverse-proxy || true
@@ -57,14 +61,14 @@ systemctl stop nmos-reverse-proxy || true
 rm -rf %{buildroot}
 
 %files
-%{_bindir}/proxylisting
+%{_bindir}/
 
 %{python2_sitelib}/reverseproxy
 %{python2_sitelib}/nmosreverseproxy-%{version}*.egg-info
 
 %config %{_sysconfdir}/httpd/conf.d/nmos-reverseproxy-common.conf
 %config %{_sysconfdir}/httpd/conf.d/nmos-apis
-%config %{_sysconfdir}/init/proxylisting.conf
+%config %{_sysconfdir}/init/nmos-reverse-proxy.conf
 
 %{_unitdir}/nmos-reverse-proxy.service
 
