@@ -1,4 +1,4 @@
-Name: nmos-reverseproxy
+Name: nmosreverseproxy
 Version: 0.1.0
 Release: 2%{?dist}
 License: Apache 2
