@@ -5,8 +5,9 @@
 
 set -e
 
-a2ensite 000-default || true
-service apache2 restart
+if dpkg-maintscript-helper supports rm_conffile; then
+        dpkg-maintscript-helper rm_conffile /etc/init/nmos-reverse-proxy.conf 0.2.0~ nmos-reverse-proxy -- "$@"
+fi
 
 #DEBHELPER#
 

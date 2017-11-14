@@ -6,7 +6,7 @@ Summary: Common reverse proxy config for IP Studio web services
 
 Source0: nmos-reverseproxy-%{version}.tar.gz
 Source1: nmos-reverseproxy-common.conf
-Source2: nmos-proxylisting.service
+Source2: nmos-reverse-proxy.service
 
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:      noarch
@@ -43,15 +43,15 @@ mkdir -p %{buildroot}/%{_sysconfdir}/httpd/conf.d/nmos-apis
 cp %{SOURCE1} %{buildroot}/%{_sysconfdir}/httpd/conf.d/nmos-reverseproxy-common.conf
 
 mkdir -p %{buildroot}/%{_unitdir}
-cp %{SOURCE2} %{buildroot}/%{_unitdir}/nmos-proxylisting.service
+cp %{SOURCE2} %{buildroot}/%{_unitdir}/nmos-reverse-proxy.service
 
 %post
 systemctl daemon-reload
-systemctl restart nmos-proxylisting || true
+systemctl restart nmos-reverse-proxy || true
 systemctl restart httpd || true
 
 %preun
-systemctl stop nmos-proxylisting || true
+systemctl stop nmos-reverse-proxy || true
 
 %clean
 rm -rf %{buildroot}
@@ -66,7 +66,7 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/httpd/conf.d/nmos-apis
 %config %{_sysconfdir}/init/proxylisting.conf
 
-%{_unitdir}/nmos-proxylisting.service
+%{_unitdir}/nmos-reverse-proxy.service
 
 %changelog
 * Mon Nov 13 2017 Simon Rankine <simon.rankine@bbc.co.uk> - 0.1.0-3

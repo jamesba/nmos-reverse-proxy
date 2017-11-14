@@ -103,9 +103,7 @@ setup(name = "nmosreverseproxy",
                   'bin/proxylisting'
                 ],
       data_files=[
-                   ('/etc/init',        ['etc/init/proxylisting.conf']),
-                   ('/lib/systemd/system', ['lib/systemd/system/proxylisting.service'])
-                 ],
+      ],
       long_description = """
 Directory listing for the root of a reverse proxied Node
 """
