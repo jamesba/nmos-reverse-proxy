@@ -52,7 +52,7 @@ class ProxyListingAPI(WebAPI):
     def get_apis(self, delimiter):
         api_list = []
         for conffile in listdir(PROXY_SITES):
-            if isfile(join(PROXY_SITES, conffile)) and conffile.endswith(".conf") and conffile.startswith("nmos-api-"):
+            if (isfile(join(PROXY_SITES, conffile)) and conffile.endswith(".conf")) and (conffile.startswith("nmos-api-") or conffile.startswith("ips-api-")):
                 with open(join(PROXY_SITES, conffile)) as proxyfile:
                     # If site is available and has a Location, list the second level of it
                     for line in proxyfile:

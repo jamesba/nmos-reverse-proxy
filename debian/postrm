@@ -6,7 +6,7 @@
 set -e
 
 if dpkg-maintscript-helper supports rm_conffile; then
-        dpkg-maintscript-helper rm_conffile /etc/init/nmos-reverse-proxy.conf 0.2.0~ nmos-reverse-proxy -- "$@"
+        dpkg-maintscript-helper rm_conffile /etc/init/ips-reverseproxy-common.conf 0.2.0~ ips-reverseproxy-common -- "$@"
 fi
 
 #DEBHELPER#
