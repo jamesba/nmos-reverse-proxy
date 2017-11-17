@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-	service proxylisting stop || true
+	service ips-proxylisting-common stop || true
     ;;
 
     failed-upgrade)

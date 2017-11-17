@@ -32,7 +32,7 @@ case "$1" in
 	a2enmod proxy_wstunnel
 	a2enmod xml2enc
 	a2dissite 000-default || true
-        service nmos-reverse-proxy restart || true
+        service ips-reverseproxy-common restart || true
 	service apache2 restart
 	;;
 
@@ -47,7 +47,7 @@ case "$1" in
 esac
 
 if dpkg-maintscript-helper supports rm_conffile; then
-        dpkg-maintscript-helper rm_conffile /etc/init/nmos-reverse-proxy.conf 0.2.0~ nmos-reverse-proxy -- "$@"
+        dpkg-maintscript-helper rm_conffile /etc/init/ips-reverseproxy-common.conf 0.2.0~ ips-reverseproxy-common -- "$@"
 fi
 
 # dh_installdeb will replace this with shell code automatically

@@ -1,5 +1,5 @@
 [Unit]
-Description=nmos-reverse-proxy
+Description=ips-reverseproxy-common
 Wants=network-online.target
 After=network.target network-online.target
 
@@ -9,3 +9,4 @@ User=ipstudio
 
 [Install]
 WantedBy=multi-user.target
+Alias=ips-proxylisting.service
