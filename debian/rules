@@ -5,3 +5,9 @@ export DH_OPTIONS=-v
 
 %:
 	dh $@ --with apache2,systemd,python2 --buildsystem=python_distutils
+
+# dh_installinit moans because dh_systemd installs its config files.
+# This tells it to ignore the files
+
+override_dh_installinit:
+	dh_installinit --noscripts
