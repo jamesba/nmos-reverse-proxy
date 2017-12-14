@@ -25,7 +25,7 @@ class ProxyListingAPI(WebAPI):
     def __init__(self):
         super(ProxyListingAPI, self).__init__()
 
-    @resource_route("/")
+    @route("/")
     def base(self):
         alias_list = ["x-ipstudio/", "x-nmos/"]
         for conffile in listdir(ALIAS_SITES):
@@ -41,11 +41,11 @@ class ProxyListingAPI(WebAPI):
         alias_list.sort()
         return alias_list
 
-    @resource_route("/x-ipstudio/")
+    @route("/x-ipstudio/")
     def x_ipstudio(self):
         return self.get_apis("x-ipstudio")
 
-    @resource_route("/x-nmos/")
+    @route("/x-nmos/")
     def x_nmos(self):
         return self.get_apis("x-nmos")
 

@@ -20,7 +20,7 @@ from proxylisting import ProxyListingAPI
 HOST = "127.0.0.1"
 PORT = 12344
 
-class ProxyListingService:
+class ProxyListingService(object):
     def __init__(self):
         self.running = False
 
@@ -58,7 +58,7 @@ class ProxyListingService:
         self.stop()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # pragma: no cover
 
     service = ProxyListingService()
     service.start()
